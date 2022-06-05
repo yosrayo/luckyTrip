@@ -129,7 +129,9 @@
 
 
 .notFound {
-
+  top: 120px;
+    width: 50%;
+    height: 50%;
   -webkit-animation: breathing 5s ease-out infinite normal;
   animation: breathing 5s ease-out infinite normal;
   -webkit-font-smoothing: antialiased;

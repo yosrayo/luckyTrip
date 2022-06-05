@@ -19,14 +19,14 @@
     </h1>
 </div>
 <div class="trending">
-    <h3 style="color: #7FFFFF;  margin-top: -90px;"  *ngIf="list2.lengh!=0">Trending</h3>
+    <h3 style="color: #7FFFFF;  margin-top: -90px;"  *ngIf="listDestination.length!=0">Trending</h3>
     <div class="container">
         <div class="row" >
-            <div class="col-12 col-sm-8 col-md-6 col-lg-4" *ngFor="let item of list2" style="margin-bottom: 20px;">
-                <div class="card"*ngIf="list2" >
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4" *ngFor="let item of listDestination" style="margin-bottom: 20px;">
+                <div class="card" >
 
                     <a (click)="goToDetails(item.id)">
-                        <img class="card-img" src="{{item.image_url | notFound}}" >
+                        <img class="card-img" src="{{item.image_url}}" >
 
                     </a>
                 </div>
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div class="container text-center" *ngIf="!list2">
+    <div class="container text-center" *ngIf="listDestination.length==0">
         <img class="notFound" src="../../assets/not_Found.png" alt="">
     </div>
 </div>

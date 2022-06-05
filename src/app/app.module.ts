@@ -6,13 +6,13 @@ import { SearchComponent } from './search/search.component';
 import { ResultsComponent } from './results/results.component';
 import { HttpClientModule, HttpClient , HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NotFoundPipe } from './not-found.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     ResultsComponent,
-    NotFoundPipe,
+  
 
   ],
   imports: [

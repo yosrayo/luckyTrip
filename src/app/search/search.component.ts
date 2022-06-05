@@ -9,9 +9,9 @@ import { DestinationService } from '../service/destination.service';
 })
 export class SearchComponent implements OnInit {
   list  = {} as any ;
-  list2= {} as any ;
-  list3= {} as any ;
-  list4= {} as any ;
+  listDestination= {} as any ;
+  listDes= {} as any ;
+  destination= {} as any ;
   searchInput ="";
   exist=true;
   constructor(private destinationService : DestinationService, private route: Router ,) { 
@@ -19,32 +19,30 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // get all the list of destination
     this.destinationService.getAllDestination().subscribe((res) => {
       this.list = res;
-      this.list2=this.list.destinations;
-      console.log("destination",this.list2); 
+      this.listDestination=this.list.destinations;
+      console.log("destination",this.listDestination); 
     });
     
   }
 
-
+//search country or city
   search(){
-    
     this.destinationService.searchDestination(this.searchInput).subscribe((res) => {
-      this.list3 = res;
-      this.list4= this.list3.destinations
-      this.list2=this.list4
-  
-      if (this.list2.lengh==0){
-        this.exist=false;
-    }
+      this.listDes = res;
+      this.destination= this.listDes.destinations
+      this.listDestination=this.destination
+      console.log("destination",this.destination)
     });
-  console.log("exist",this.exist)
+
   } 
 
 
 
-
+//button Go 
+//send id in the router
   goToDetails(id : number){
     let navigationExtras: NavigationExtras = {
       state: {
