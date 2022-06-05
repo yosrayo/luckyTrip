@@ -1,0 +1,44 @@
+<div class="uk-height-large uk-background-cover uk-light uk-flex">
+    <img class="image" src="../../assets/LuckyTrip_Logo_Small-1.png" style="margin-top: 10px; margin-left: 10px;">
+    <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical" style="margin-top: 100px;">
+        <h2><strong>Search LuckyTrip</strong></h2>
+        <h6>360 desdinations , 1500 blog posts , unlimited trips</h6>
+        <div class="uk-margin">
+            <div class="search-box text-center">
+                <input class="search-txt" type="text" name="" placeholder="Enter a Destination..."
+                    [(ngModel)]="searchInput">
+
+                <div class="button-box">
+
+                    <button class="search-btn" (click)="search()">
+                        <p class="text-button">Go</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </h1>
+</div>
+<div class="trending">
+    <h3 style="color: #7FFFFF;  margin-top: -90px;"  *ngIf="list2.lengh!=0">Trending</h3>
+    <div class="container">
+        <div class="row" >
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4" *ngFor="let item of list2" style="margin-bottom: 20px;">
+                <div class="card"*ngIf="list2" >
+
+                    <a (click)="goToDetails(item.id)">
+                        <img class="card-img" src="{{item.image_url | notFound}}" >
+
+                    </a>
+                </div>
+                <div class="centered" >
+                    <strong class="text-center">{{item.country_name}} </strong> <br>
+                    <p class="text-center"> <strong>{{item.city}}</strong></p>
+                   </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center" *ngIf="!list2">
+        <img class="notFound" src="../../assets/not_Found.png" alt="">
+    </div>
+</div>

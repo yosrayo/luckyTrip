@@ -1,0 +1,61 @@
+
+<div  class="bg-image"
+style.background-image="url('{{url}}')"
+>
+ <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong  justify-content-between">
+    <img class="image" src="../../assets/LuckyTrip_Logo_Small-1.png" >
+        <form class="form-inline">
+            <div class="search-box">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input class="search-txt" type="text" name="" placeholder="Enter a Destination...">
+                    <div class="button-box">
+                <button class="search-btn"><p class="text-button">Go</p></button>
+                    </div>
+            </div>
+        </form>
+      </nav>   
+ <div>
+    <h1 class="text-center " style="margin-top: 170px;">
+
+    <h1><strong class="country">{{details.city}}</strong></h1>
+        <h6 class="city">{{details.country_name}}</h6>
+</h1>
+ </div>
+    </div>
+<div class="details">
+  <h3 class="uk-article-title" style="color: #FFEE7C; margin-top: -130px;" *ngIf="details.description.text"> What's it like ?</h3>
+    <div class="container">
+        <article class="uk-article">
+
+           
+        
+            <p class="article" *ngIf="details.description.text">{{details.description.text}}</p>
+        </article>
+
+        <div class="blog">
+            <h3 style="color: #7FFFFF;">Blog Posts</h3>
+        
+            <div class="container">
+                <div class="row">
+                
+                  <div class="col-12 col-sm-8 col-md-6 col-lg-4" *ngFor="let item of blog"  style="margin-bottom: 30px;">
+                    <div class="card"  >
+                      <img class="card-img" src="{{item.thumbnail.image_url}}">
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <h1 class="text-center" style="margin-top: 50px;">
+
+            <h3><strong class="country" style="color: #FF7C9A; margin-top: 50px;">Find a trip to {{details.country_name}}</strong></h3>
+                <h6 class="city">Tap the Lucky button to get started</h6>
+                <input type="image" class="breathing-button"
+                src="../../assets/lucky_button.png">
+        </h1>
+    </div>
+</div>
+   
+        
+
+
